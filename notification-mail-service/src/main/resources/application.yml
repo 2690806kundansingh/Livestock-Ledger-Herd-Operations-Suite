@@ -1,0 +1,73 @@
+# File: notification-mail-service/src/main/resources/application.yml
+server:
+  port: 8084
+
+spring:
+  application:
+    name: notification-mail-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/notification_db
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${GMAIL_USERNAME:farm.operations.alert@gmail.com}
+    password: ${GMAIL_APP_PASSWORD:placeholder}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+  thymeleaf:
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    suffix: .html
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notification-service-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+
+app:
+  notifications:
+    from-email: ${GMAIL_USERNAME:farm.operations.alert@gmail.com}
+    manager-email: ${FARM_MANAGER_EMAIL:manager@farmoperations.com}
+    procurement-email: ${PROCUREMENT_OFFICER_EMAIL:procurement@farmoperations.com}
+    mortality-emergency-threshold: 3
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    com.farmoperations: DEBUG
+    org.springframework.mail: DEBUG
+    org.springframework.kafka: INFO

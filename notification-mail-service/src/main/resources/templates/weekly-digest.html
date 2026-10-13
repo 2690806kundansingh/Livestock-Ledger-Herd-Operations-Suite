@@ -1,0 +1,129 @@
+<!-- File: notification-mail-service/src/main/resources/templates/weekly-digest.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Herd Executive Digest</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 24px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #334155;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        .header {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            padding: 24px 32px;
+            text-align: left;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+        .header p {
+            margin: 6px 0 0;
+            color: #a7f3d0;
+            font-size: 14px;
+        }
+        .content {
+            padding: 32px;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .metric-box {
+            background-color: #0f172a;
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid #334155;
+            text-align: center;
+        }
+        .box-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 4px;
+        }
+        .box-label {
+            font-size: 12px;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .btn-action {
+            display: inline-block;
+            background-color: #059669;
+            color: #ffffff !important;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 12px 24px;
+            border-radius: 6px;
+            margin-top: 16px;
+            text-align: center;
+        }
+        .footer {
+            background-color: #0f172a;
+            padding: 20px 32px;
+            text-align: center;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #334155;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Weekly Herd Executive Digest</h1>
+            <p th:text="'Report compiled for week of ' + ${reportDate}">Report compiled for week of Oct 13, 2026</p>
+        </div>
+        <div class="content">
+            <p style="font-size: 15px; line-height: 1.5; color: #cbd5e1; margin-top: 0;">
+                Here is your operational summary covering herd dynamics, mortality events, and feed inventory telemetry for the past 7 days.
+            </p>
+
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="box-number" th:text="${weeklyMortalities}">0</div>
+                    <div class="box-label">7-Day Casualties</div>
+                </div>
+                <div class="metric-box">
+                    <div class="box-number" th:text="${alertsDispatched}">2</div>
+                    <div class="box-label">Alerts Dispatched</div>
+                </div>
+                <div class="metric-box">
+                    <div class="box-number" style="color: #38bdf8;" th:text="${systemHealth}">OPTIMAL</div>
+                    <div class="box-label">Telemetry Status</div>
+                </div>
+                <div class="metric-box">
+                    <div class="box-number" style="color: #a78bfa;">100%</div>
+                    <div class="box-label">Broker Uptime</div>
+                </div>
+            </div>
+
+            <a th:href="${dashboardUrl}" class="btn-action">Access Executive Suite</a>
+        </div>
+        <div class="footer">
+            Livestock Ledger & Herd Operations Suite • Scheduled Automation Engine
+        </div>
+    </div>
+</body>
+</html>

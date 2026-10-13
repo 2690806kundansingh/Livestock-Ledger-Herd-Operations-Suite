@@ -1,0 +1,73 @@
+# File: api-gateway/src/main/resources/application.yml
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:5173"
+              - "http://localhost:3000"
+              - "http://127.0.0.1:5173"
+              - "http://127.0.0.1:3000"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - PATCH
+              - OPTIONS
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+            maxAge: 3600
+      routes:
+        # 1. Livestock Ledger Service Routes
+        - id: livestock-ledger-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/v1/animals/**
+
+        # 2. Feed Inventory Service Routes
+        - id: feed-inventory-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/v1/inventory/**
+
+        # 3. Forecasting & PnL Service Routes
+        - id: forecasting-pnl-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/v1/forecast/**
+
+        # 4. Notification Mail Service Routes
+        - id: notification-mail-service
+          uri: http://localhost:8084
+          predicates:
+            - Path=/api/v1/notifications/**
+
+        # 5. WebSocket STOMP Endpoint Route (forwarding to Livestock Ledger Service)
+        - id: livestock-websocket
+          uri: ws://localhost:8081
+          predicates:
+            - Path=/ws/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.gateway: INFO
+    org.springframework.security: INFO

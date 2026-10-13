@@ -1,0 +1,47 @@
+# File: livestock-ledger-service/src/main/resources/application.yml
+server:
+  port: 8081
+
+spring:
+  application:
+    name: livestock-ledger-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/livestock_db
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: true
+
+app:
+  kafka:
+    topics:
+      animal-events: animal.events
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    root: INFO
+    com.farmoperations: DEBUG
+    org.springframework.kafka: INFO
