@@ -82,6 +82,9 @@ This project has continuously evolved to meet the real-world operational and eco
 ├─────────────────┼──────────────────────────────────────────┼─────────────────────────────────────┤
 │ Phase 9         │ AI Symptom Diagnostic & Emergency First- │ 🔴 Critical / 🟡 Moderate triage    │
 │                 │ Aid Triage Guide (`/symptom-diagnostic`) │ with golden-hour first-aid & SOS.   │
+├─────────────────┼──────────────────────────────────────────┼─────────────────────────────────────┤
+│ Phase 10        │ Live Daily Working Posts & Shift Duty    │ Live field activity stream, chore   │
+│                 │ Board (`/daily-work-feed`)               │ checklist & manager verification.   │
 └─────────────────┴──────────────────────────────────────────┴─────────────────────────────────────┘
 ```
 
@@ -138,7 +141,30 @@ This project has continuously evolved to meet the real-world operational and eco
 
 ---
 
-### 4. 📸 Multi-Image Pond & Shed Operational Galleries
+### 4. 📸 Live Daily Working Details & Field Shift Feed (`/daily-work-feed`)
+- **How to Use:**
+  1. Navigate to **Live Daily Work Posts** (`/daily-work-feed`).
+  2. **Inspect Live Activity Stream**:
+     - View real-time work updates posted by on-duty handlers (Milking volumes, Pond DO checks, Goat machan sanitation, Swine biogas slurry flushing).
+     - Filter posts by Category (*Milking, Feeding, Sanitation, Pond & Water, Veterinary, Biogas & Waste*) and Status (*Completed, In Progress*).
+     - Tap **"Listen"** to hear audio narration of any work post.
+     - Tap **"Acknowledged"** to like or confirm tasks.
+     - Farm managers can tap **"Verify"** to apply the official green **"Manager Verified ✓"** seal.
+  3. **Publish Today's Work Post:**
+     - Tap **"📸 Post Today's Work Update"**.
+     - Enter handler name, work category, zone (Zone A to E), activity headline, and detailed observations.
+     - Attach a preset work photograph or custom image.
+     - Enter operational metrics (e.g. *142.5 Liters*, *6.4 mg/L DO*, *85 kg manure*).
+     - Submit to broadcast the update live across the entire team feed with a "Just now" badge.
+  4. **Daily 24-Hour Duty Checklist:**
+     - Monitor the 8 daily farm milestones with live completion progress bar.
+     - Tap any chore to mark it completed.
+  5. **Shift Handover Printout:**
+     - Tap **"Print Daily Shift Log"** for physical daily record handover.
+
+---
+
+### 5. 📸 Multi-Image Pond & Shed Operational Galleries
 - **Available on:**
   - [FarmStarterPage.tsx](file:///frontend/src/pages/FarmStarterPage.tsx) (in the Species Incubation Deep-Dive)
   - [ShedEngineeringPage.tsx](file:///frontend/src/pages/ShedEngineeringPage.tsx) (in the `📸 Multi-Image Photo Guide` tab)

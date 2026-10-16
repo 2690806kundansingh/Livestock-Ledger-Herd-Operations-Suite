@@ -22,6 +22,7 @@ import { ShedEngineeringPage } from './pages/ShedEngineeringPage';
 import { SubsidySchemesPage } from './pages/SubsidySchemesPage';
 import { ProductionLedgerPage } from './pages/ProductionLedgerPage';
 import { SymptomDiagnosticPage } from './pages/SymptomDiagnosticPage';
+import { DailyWorkLogPage } from './pages/DailyWorkLogPage';
 
 // Shared Components & Dialog Modals
 import { FooterWithRunningImages } from './components/FooterWithRunningImages';
@@ -346,6 +347,16 @@ export const App: React.FC = () => {
                     onSOSDispatched={handleSOSDispatched}
                   />
                 }
+              />
+
+              {/* PAGE 16: Live Daily Working Posts & Shift Duty Board */}
+              <Route
+                path="/daily-work-feed"
+                element={<DailyWorkLogPage />}
+              />
+              <Route
+                path="/daily-work"
+                element={<Navigate to="/daily-work-feed" replace />}
               />
 
               {/* Fallback */}

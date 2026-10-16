@@ -270,6 +270,14 @@ export const HomePage: React.FC<HomePageProps> = ({
             <span>AI Health Triage</span>
           </button>
           <button
+            onClick={() => navigate('/daily-work-feed')}
+            className="px-3 py-1.5 rounded-lg text-emerald-300 bg-emerald-950/60 border border-emerald-800/60 hover:bg-emerald-900/80 transition whitespace-nowrap flex items-center gap-1 font-bold text-xs"
+            title="Live Daily Working Updates & Shift Journal"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+            <span>Live Work Feed</span>
+          </button>
+          <button
             onClick={onOpenCallVet}
             className="px-3 py-1.5 rounded-lg text-rose-300 hover:bg-rose-950/60 transition whitespace-nowrap flex items-center gap-1 font-bold text-xs"
             title="1-Tap Emergency Vet Call"

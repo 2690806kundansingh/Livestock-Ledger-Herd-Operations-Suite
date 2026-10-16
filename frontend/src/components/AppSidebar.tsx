@@ -19,6 +19,7 @@ import {
   PlusCircle,
   BookOpen,
   FileText,
+  Camera,
   Volume2,
   VolumeX,
   Bell,
@@ -136,6 +137,14 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
       icon: <HeartPulse className="h-4 w-4" />,
       badge: 'SOS',
       badgeColor: 'bg-rose-500/20 text-rose-300 border border-rose-500/30',
+    },
+    {
+      path: '/daily-work-feed',
+      label: 'Live Daily Work Posts',
+      sublabel: 'Shift updates & chores log',
+      icon: <Camera className="h-4 w-4" />,
+      badge: 'Live',
+      badgeColor: 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30',
     },
     {
       path: '/dashboard',

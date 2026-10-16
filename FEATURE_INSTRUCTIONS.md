@@ -8,10 +8,11 @@ This document provides in-depth operational instructions for all specialized ser
 1. [Government Subsidies & Bankable DPR Generator (`/subsidy-schemes`)](#1-government-subsidies--bankable-dpr-generator)
 2. [Daily Production & Milk / Egg / Meat Ledger (`/production-ledger`)](#2-daily-production--milk--egg--meat-ledger)
 3. [AI Animal Health Diagnostic & First-Aid Triage (`/symptom-diagnostic`)](#3-ai-animal-health-diagnostic--first-aid-triage)
-4. [Multi-Image Pond & Shed Operational Galleries](#4-multi-image-pond--shed-operational-galleries)
-5. [Start Your Own Farm Incubation Service (`/start-farming`)](#5-start-your-own-farm-incubation-service)
-6. [Shed Engineering & Flooring Mat Architecture (`/shed-engineering`)](#6-shed-engineering--flooring-mat-architecture)
-7. [2-Acre Domestic Livestock Hub & Species Portals (`/animals`)](#7-2-acre-domestic-livestock-hub--species-portals)
+4. [Live Daily Working Details & Field Shift Feed (`/daily-work-feed`)](#4-live-daily-working-details--field-shift-feed)
+5. [Multi-Image Pond & Shed Operational Galleries](#5-multi-image-pond--shed-operational-galleries)
+6. [Start Your Own Farm Incubation Service (`/start-farming`)](#6-start-your-own-farm-incubation-service)
+7. [Shed Engineering & Flooring Mat Architecture (`/shed-engineering`)](#7-shed-engineering--flooring-mat-architecture)
+8. [2-Acre Domestic Livestock Hub & Species Portals (`/animals`)](#8-2-acre-domestic-livestock-hub--species-portals)
 
 ---
 
@@ -90,7 +91,37 @@ Visual symptom checker and emergency triage guide providing life-saving first ai
 
 ---
 
-## 4. Multi-Image Pond & Shed Operational Galleries
+## 4. Live Daily Working Details & Field Shift Feed
+*Route: `/daily-work-feed`*
+
+### Overview
+Live real-time activity stream and daily shift duty journal where farm handlers, herd managers, and veterinary officers broadcast completed chores, pond test readings, milking totals, and barn maintenance.
+
+### How to Use:
+1. **Browse Live Activity Stream:**
+   - Review live cards showing worker name, role, timestamp, zone location, and category.
+   - Filter posts by Category (*Milking, Feeding, Sanitation, Pond & Water, Veterinary, Biogas & Waste, Maintenance*) and Status (*Completed, In Progress*).
+   - Tap **"Listen"** on any post to hear voice narration.
+   - Tap **"Acknowledged"** to like or confirm tasks.
+   - Farm managers can tap **"Verify"** to apply the official green **"Manager Verified ✓"** seal.
+2. **Publish Today's Work Post:**
+   - Tap **"📸 Post Today's Work Update"**.
+   - Fill in:
+     - Worker Name & Role.
+     - Work Category & Zone (e.g., Zone A Dairy, Zone C Fish Pond).
+     - Work Headline & Detailed Observations.
+     - Key Metrics (e.g. *142.5 Liters*, *6.4 mg/L DO*, *85 kg manure*).
+     - Attach preset work photo or custom picture.
+   - Click **"Publish Live Work Post"** to immediately stream it into the team bulletin board with a "Just now" badge.
+3. **Daily 24-Hour Duty Checklist:**
+   - Monitor the 8 standard daily chores (05:00 AM washdown, 05:30 AM milking, 06:00 AM pond aeration, 07:00 AM Napier chaffing, 08:30 AM egg collection, 10:00 AM swine wash, 01:00 PM cooling spray, 04:30 PM evening concentrates).
+   - Check off chores as completed to dynamically advance the live percentage progress bar.
+4. **Shift Handover Printout:**
+   - Tap **"Print Daily Shift Log"** to produce an official physical shift handover report.
+
+---
+
+## 5. Multi-Image Pond & Shed Operational Galleries
 *Available on: `/start-farming`, `/shed-engineering`, `/animals`*
 
 ### Features:
@@ -108,7 +139,7 @@ Visual symptom checker and emergency triage guide providing life-saving first ai
 
 ---
 
-## 5. Start Your Own Farm Incubation Service
+## 6. Start Your Own Farm Incubation Service
 *Route: `/start-farming`*
 
 ### Features:
@@ -119,7 +150,7 @@ Visual symptom checker and emergency triage guide providing life-saving first ai
 
 ---
 
-## 6. Shed Engineering & Flooring Mat Architecture
+## 7. Shed Engineering & Flooring Mat Architecture
 *Route: `/shed-engineering`*
 
 ### Features:
@@ -130,7 +161,7 @@ Visual symptom checker and emergency triage guide providing life-saving first ai
 
 ---
 
-## 7. 2-Acre Domestic Livestock Hub & Species Portals
+## 8. 2-Acre Domestic Livestock Hub & Species Portals
 *Route: `/animals`*
 
 ### Features:
