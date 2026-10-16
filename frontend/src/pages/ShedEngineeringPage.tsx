@@ -19,6 +19,7 @@ import {
   Grid,
 } from 'lucide-react';
 import { SpeciesType } from '../types/farm2Acre';
+import { MultiImageInstructionGallery } from '../components/MultiImageInstructionGallery';
 
 interface ShedEngineeringPageProps {
   onSelectSpecies?: (species: SpeciesType) => void;
@@ -58,7 +59,7 @@ export const ShedEngineeringPage: React.FC<ShedEngineeringPageProps> = ({
   const { isSpeaking, currentText, speak, stop } = useFarmVoice();
 
   const [activeSpecies, setActiveSpecies] = useState<SpeciesType>('cow');
-  const [activeTab, setActiveTab] = useState<'structure' | 'flooring' | 'calculator'>('structure');
+  const [activeTab, setActiveTab] = useState<'structure' | 'flooring' | 'gallery' | 'calculator'>('structure');
 
   // Calculator states
   const [calcAnimal, setCalcAnimal] = useState<SpeciesType>('cow');
@@ -463,6 +464,14 @@ export const ShedEngineeringPage: React.FC<ShedEngineeringPageProps> = ({
               🛡️ Mats & Flooring
             </button>
             <button
+              onClick={() => setActiveTab('gallery')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition ${
+                activeTab === 'gallery' ? 'bg-emerald-600 text-white shadow-md' : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              📸 Multi-Image Photo Guide
+            </button>
+            <button
               onClick={() => setActiveTab('calculator')}
               className={`px-3 py-1.5 rounded-xl text-xs font-bold transition ${
                 activeTab === 'calculator' ? 'bg-emerald-600 text-white shadow-md' : 'text-slate-400 hover:text-white'
@@ -633,6 +642,16 @@ export const ShedEngineeringPage: React.FC<ShedEngineeringPageProps> = ({
                   ))}
                 </ul>
               </div>
+
+              <div className="pt-2">
+                <button
+                  onClick={() => setActiveTab('gallery')}
+                  className="w-full py-2.5 px-4 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 font-bold text-xs border border-emerald-500/30 transition flex items-center justify-center gap-2"
+                >
+                  <span>📸 Open 6-Image Step-by-Step Facility Tour for {current.title.split(' ')[0]}</span>
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -734,8 +753,34 @@ export const ShedEngineeringPage: React.FC<ShedEngineeringPageProps> = ({
                   </li>
                 </ul>
               </div>
+
+              <div className="pt-2">
+                <button
+                  onClick={() => setActiveTab('gallery')}
+                  className="w-full py-2.5 px-4 rounded-xl bg-cyan-600/20 hover:bg-cyan-600/30 text-cyan-300 font-bold text-xs border border-cyan-500/30 transition flex items-center justify-center gap-2"
+                >
+                  <span>📸 Inspect High-Resolution Photos of Flooring, Ponds & Sheds</span>
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
             </div>
           </div>
+        </section>
+      )}
+
+      {/* TAB CONTENT: MULTI-IMAGE PHOTO WALKTHROUGH */}
+      {activeTab === 'gallery' && (
+        <section className="animate-fadeIn">
+          <MultiImageInstructionGallery
+            initialSpecies={activeSpecies}
+            showSpeciesSelector={false}
+            onSpeciesChange={(sp) => {
+              setActiveSpecies(sp);
+              setCalcAnimal(sp);
+            }}
+            title={`${current.title} — Multi-Angle Construction & Facility Tour`}
+            subtitle="Step-by-step photographic inspection across earthen pond excavation, solar paddlewheel aerators, slatted machans, vulcanized rubber mats, and deep-litter bedding."
+          />
         </section>
       )}
 

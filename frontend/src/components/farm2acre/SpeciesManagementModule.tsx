@@ -5,6 +5,7 @@ import { SPECIES_MODULES, FARM_ZONES_CONFIG } from '../../data/farm2AcreData';
 import { SpeciesType, HousingItem, MarketplaceAnimal } from '../../types/farm2Acre';
 import { useFarmVoice } from '../../utils/speechVoice';
 import { HousingPhotoModal } from './HousingPhotoModal';
+import { MultiImageInstructionGallery } from '../MultiImageInstructionGallery';
 import {
   Volume2,
   VolumeX,
@@ -36,7 +37,7 @@ export const SpeciesManagementModule: React.FC<SpeciesManagementModuleProps> = (
   onSelectSpecies,
 }) => {
   const { isSpeaking, currentText, speak, stop } = useFarmVoice();
-  const [activeTab, setActiveTab] = useState<'HOUSING' | 'FEEDING' | 'VET' | 'MARKET'>('HOUSING');
+  const [activeTab, setActiveTab] = useState<'HOUSING' | 'FEEDING' | 'VET' | 'MARKET' | 'MULTI_GALLERY'>('HOUSING');
   const [modalItem, setModalItem] = useState<{
     isOpen: boolean;
     title: string;
@@ -257,6 +258,17 @@ export const SpeciesManagementModule: React.FC<SpeciesManagementModuleProps> = (
             <ShoppingBag className="h-4 w-4" />
             <span>🏷️ 4. पशु खरीद-बिक्री (Marketplace & Tags)</span>
           </button>
+          <button
+            onClick={() => setActiveTab('MULTI_GALLERY')}
+            className={`px-4 py-3 rounded-xl text-xs sm:text-sm font-bold transition flex items-center space-x-2 whitespace-nowrap ${
+              activeTab === 'MULTI_GALLERY'
+                ? 'bg-emerald-600 text-white shadow-md'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800'
+            }`}
+          >
+            <Sparkles className="h-4 w-4 text-amber-300" />
+            <span>📸 5. मल्टी-फोटो गाइड (Ponds & Housing Multi-Image Walkthrough)</span>
+          </button>
         </div>
       </div>
 
@@ -359,6 +371,16 @@ export const SpeciesManagementModule: React.FC<SpeciesManagementModuleProps> = (
                 </div>
               );
             })}
+          </div>
+
+          <div className="pt-2">
+            <button
+              onClick={() => setActiveTab('MULTI_GALLERY')}
+              className="w-full py-3.5 px-4 rounded-2xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-300 font-bold text-xs sm:text-sm border border-emerald-500/30 transition flex items-center justify-center gap-2"
+            >
+              <Sparkles className="h-4 w-4 text-amber-300" />
+              <span>📸 Explore Full 6-Image Step-by-Step Ponds & Housing Blueprint for {moduleData.commonName}</span>
+            </button>
           </div>
         </div>
       )}
@@ -705,6 +727,21 @@ export const SpeciesManagementModule: React.FC<SpeciesManagementModuleProps> = (
               );
             })}
           </div>
+        </div>
+      )}
+
+      {/* ========================================================
+          SUB-SECTION 5: MULTI-IMAGE STEP-BY-STEP OPERATIONAL TOUR
+      ======================================================== */}
+      {activeTab === 'MULTI_GALLERY' && (
+        <div className="space-y-4 animate-fadeIn">
+          <MultiImageInstructionGallery
+            initialSpecies={selectedSpecies}
+            showSpeciesSelector={false}
+            onSpeciesChange={(sp) => onSelectSpecies(sp)}
+            title={`${moduleData.commonName} (${moduleData.vernacularName}) — Complete Photographic Walkthrough`}
+            subtitle="Explore high-definition photography covering earthen pond engineering, paddlewheel aerators, slatted floors, rubber mats, precision feeding, and herd health."
+          />
         </div>
       )}
 

@@ -21,6 +21,7 @@ import {
   PlusCircle,
 } from 'lucide-react';
 import { SpeciesType } from '../types/farm2Acre';
+import { MultiImageInstructionGallery } from '../components/MultiImageInstructionGallery';
 
 interface FarmStarterPageProps {
   onSelectSpecies?: (species: SpeciesType) => void;
@@ -936,6 +937,17 @@ export const FarmStarterPage: React.FC<FarmStarterPageProps> = ({
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Multi-Image Photo Instruction Tour */}
+          <div className="pt-6 border-t border-slate-800">
+            <MultiImageInstructionGallery
+              initialSpecies={selectedSpecies}
+              showSpeciesSelector={false}
+              onSpeciesChange={(sp) => setSelectedSpecies(sp)}
+              title={`${currentGuide.name} — Multi-Image Operational & Facility Tour`}
+              subtitle="Detailed photographic inspection across ponds, ventilation ridges, bedding mats, precision feeding, and day-to-day husbandry."
+            />
           </div>
         </div>
       </section>
