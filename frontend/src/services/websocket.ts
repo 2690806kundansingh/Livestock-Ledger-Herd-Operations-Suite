@@ -13,7 +13,7 @@ class WebSocketService {
   private messageCallbacks: Set<HeadcountCallback> = new Set();
   private statusCallbacks: Set<ConnectionStatusCallback> = new Set();
 
-  public connect(endpointUrl: string = 'http://localhost:8080/ws') {
+  public connect(endpointUrl: string = ((import.meta as any).env?.VITE_WS_URL || 'http://localhost:8085/ws')) {
     if (this.client && this.client.active) {
       return;
     }

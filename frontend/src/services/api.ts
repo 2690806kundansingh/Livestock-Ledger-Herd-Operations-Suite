@@ -2,7 +2,7 @@
 
 import { Animal, AnimalStatus, HeadcountSummary, LifeEvent, FeedStock, WaterfallForecast, DeliveryLog } from '../types';
 
-const API_BASE_URL = 'http://localhost:8080';
+const API_BASE_URL = (import.meta as any).env?.VITE_API_BASE_URL || 'http://localhost:8085';
 
 export const api = {
   // Animals & Census

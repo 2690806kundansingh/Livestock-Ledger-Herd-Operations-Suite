@@ -20,11 +20,11 @@ The **Livestock Ledger & Herd Operations Suite** is an autonomous distributed mi
                                   [ Browser / Client ]
                                            │
                            HTTP / REST     │     STOMP / SockJS
-                       (http://localhost:8080)  (ws://localhost:8080/ws)
+                       (http://localhost:8085)  (ws://localhost:8085/ws)
                                            ▼
                             ┌─────────────────────────────┐
                             │    Spring Cloud Gateway     │
-                            │         (Port 8080)         │
+                            │         (Port 8085)         │
                             └──────────────┬──────────────┘
                                            │
          ┌───────────────────┬─────────────┴───────┬───────────────────┐
@@ -46,7 +46,7 @@ The **Livestock Ledger & Herd Operations Suite** is an autonomous distributed mi
 
 ## 📦 Microservices Breakdown
 
-### 1. `api-gateway` (Port 8080)
+### 1. `api-gateway` (Port 8085)
 - **Role**: Central entrypoint, reactive CORS management, and reverse proxy routing.
 - **Routes**:
   - `/api/v1/animals/**` ➔ `http://localhost:8081`

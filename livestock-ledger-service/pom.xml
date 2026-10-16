@@ -53,6 +53,19 @@
             <artifactId>spring-boot-starter-websocket</artifactId>
         </dependency>
 
+        <!-- Hibernate Spatial (PostGIS support) -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-spatial</artifactId>
+        </dependency>
+
+        <!-- JTS Topology Suite (Geometry/Point for SRID 4326) -->
+        <dependency>
+            <groupId>org.locationtech.jts</groupId>
+            <artifactId>jts-core</artifactId>
+            <version>1.19.0</version>
+        </dependency>
+
         <!-- Actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -40,6 +40,16 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
     }
 
+    @ExceptionHandler(jakarta.validation.ConstraintViolationException.class)
+    public ResponseEntity<Map<String, Object>> handleConstraintViolation(jakarta.validation.ConstraintViolationException ex) {
+        Map<String, Object> body = new HashMap<>();
+        body.put("timestamp", LocalDateTime.now());
+        body.put("status", HttpStatus.BAD_REQUEST.value());
+        body.put("error", "Parameter Validation Failed");
+        body.put("message", ex.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex) {
         Map<String, Object> body = new HashMap<>();

@@ -65,7 +65,7 @@ CREATE DATABASE notification_db;
 You can run each microservice by navigating to its main class and clicking the green **Run** arrow next to `public static void main`:
 
 #### Microservice Port Mapping & Entrypoints:
-1. **`api-gateway`** (Port: `8080`)
+1. **`api-gateway`** (Port: `8085`)
    - Main Class: `com.farmoperations.gateway.ApiGatewayApplication`
    - Path: `api-gateway/src/main/java/com/farmoperations/gateway/ApiGatewayApplication.java`
 

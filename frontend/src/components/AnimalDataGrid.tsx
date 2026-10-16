@@ -45,10 +45,33 @@ export const AnimalDataGrid: React.FC<AnimalDataGridProps> = ({
     }
   };
 
+  const getSpeciesImage = (species: string) => {
+    const s = species.toLowerCase();
+    if (s.includes('cow') || s.includes('cattle') || s.includes('gir') || s.includes('sahiwal')) {
+      return 'https://images.unsplash.com/photo-1546445317-29f4545e9d53?auto=format&fit=crop&w=120&q=80';
+    }
+    if (s.includes('goat') || s.includes('sirohi') || s.includes('barbari')) {
+      return 'https://images.unsplash.com/photo-1524024973431-2ad916746881?auto=format&fit=crop&w=120&q=80';
+    }
+    if (s.includes('buffalo') || s.includes('murrah')) {
+      return 'https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=120&q=80';
+    }
+    if (s.includes('hen') || s.includes('poultry') || s.includes('chicken') || s.includes('kadaknath')) {
+      return 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=120&q=80';
+    }
+    if (s.includes('pig') || s.includes('swine') || s.includes('yorkshire')) {
+      return 'https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=120&q=80';
+    }
+    if (s.includes('fish') || s.includes('rohu') || s.includes('catla')) {
+      return 'https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=120&q=80';
+    }
+    return 'https://images.unsplash.com/photo-1546445317-29f4545e9d53?auto=format&fit=crop&w=120&q=80';
+  };
+
   const statusFilters = ['ALL', 'ACTIVE', 'QUARANTINE', 'SOLD', 'DECEASED'];
 
   return (
-    <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl mb-6">
+    <div id="herd-master-registry" className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-xl mb-6">
       {/* Top Filter Bar */}
       <div className="p-5 border-b border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
@@ -120,9 +143,16 @@ export const AnimalDataGrid: React.FC<AnimalDataGridProps> = ({
               filteredAnimals.map((animal) => (
                 <tr key={animal.id} className="hover:bg-slate-800/40 transition">
                   <td className="py-3 px-4 font-semibold text-slate-200">
-                    <div className="flex items-center space-x-2">
-                      <Tag className="h-3.5 w-3.5 text-slate-500" />
-                      <span>{animal.tagNumber}</span>
+                    <div className="flex items-center space-x-2.5">
+                      <img
+                        src={getSpeciesImage(animal.species)}
+                        alt={animal.species}
+                        className="w-8 h-8 rounded-lg object-cover border border-slate-700 shadow-sm shrink-0"
+                      />
+                      <div className="flex items-center space-x-1.5">
+                        <Tag className="h-3.5 w-3.5 text-slate-500" />
+                        <span>{animal.tagNumber}</span>
+                      </div>
                     </div>
                   </td>
                   <td className="py-3 px-4 text-slate-300 font-medium">

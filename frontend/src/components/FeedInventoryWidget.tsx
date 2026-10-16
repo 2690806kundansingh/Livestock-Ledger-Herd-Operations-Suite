@@ -55,6 +55,23 @@ export const FeedInventoryWidget: React.FC<FeedInventoryWidgetProps> = ({
     }
   };
 
+  const getFeedImage = (name: string) => {
+    const lower = name.toLowerCase();
+    if (lower.includes('silage') || lower.includes('napier') || lower.includes('green')) {
+      return 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=400&q=80';
+    }
+    if (lower.includes('straw') || lower.includes('hay') || lower.includes('chaff')) {
+      return 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=400&q=80';
+    }
+    if (lower.includes('fish') || lower.includes('pellet') || lower.includes('fingerling')) {
+      return 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=400&q=80';
+    }
+    if (lower.includes('poultry') || lower.includes('grain') || lower.includes('mash')) {
+      return 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=400&q=80';
+    }
+    return 'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=400&q=80';
+  };
+
   return (
     <div className="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl mb-6">
       <div className="flex items-center justify-between pb-4 border-b border-slate-800">
@@ -86,21 +103,32 @@ export const FeedInventoryWidget: React.FC<FeedInventoryWidgetProps> = ({
         {feedStocks.map((stock) => (
           <div
             key={stock.id}
-            className={`rounded-xl p-4 border transition ${
+            className={`rounded-xl p-4 border transition overflow-hidden ${
               stock.isLowStock
                 ? 'bg-rose-950/20 border-rose-800/40'
                 : 'bg-slate-950/60 border-slate-800'
             }`}
           >
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-white">{stock.feedName}</span>
+            <div className="flex items-start justify-between gap-2">
+              <div className="flex items-center space-x-2.5">
+                <img
+                  src={getFeedImage(stock.feedName)}
+                  alt={stock.feedName}
+                  className="w-10 h-10 rounded-lg object-cover border border-slate-700 shadow-sm shrink-0"
+                />
+                <div>
+                  <span className="text-xs font-bold text-white block">{stock.feedName}</span>
+                  <span className="text-[10px] text-slate-400">ID: #{stock.id}</span>
+                </div>
+              </div>
+
               {stock.isLowStock ? (
-                <span className="flex items-center space-x-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30">
+                <span className="flex items-center space-x-1 px-2 py-0.5 rounded-full text-[11px] font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30 shrink-0">
                   <AlertTriangle className="h-3 w-3" />
                   <span>Reorder Alert</span>
                 </span>
               ) : (
-                <span className="px-2 py-0.5 rounded-full text-[11px] font-medium bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                <span className="px-2 py-0.5 rounded-full text-[11px] font-medium bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 shrink-0">
                   Stock Healthy
                 </span>
               )}
