@@ -19,6 +19,9 @@ import { BioEconomyPage } from './pages/BioEconomyPage';
 import { NearbyFarmsPage } from './pages/NearbyFarmsPage';
 import { FarmStarterPage } from './pages/FarmStarterPage';
 import { ShedEngineeringPage } from './pages/ShedEngineeringPage';
+import { SubsidySchemesPage } from './pages/SubsidySchemesPage';
+import { ProductionLedgerPage } from './pages/ProductionLedgerPage';
+import { SymptomDiagnosticPage } from './pages/SymptomDiagnosticPage';
 
 // Shared Components & Dialog Modals
 import { FooterWithRunningImages } from './components/FooterWithRunningImages';
@@ -313,6 +316,34 @@ export const App: React.FC = () => {
                     onSelectSpecies={(species) => setSelectedSpecies(species)}
                     onOpenCallVet={() => setIsCallVetOpen(true)}
                     onOpenRegister={() => setIsRegisterOpen(true)}
+                  />
+                }
+              />
+
+              {/* PAGE 13: Government Subsidies & Bankable DPR Generator */}
+              <Route
+                path="/subsidy-schemes"
+                element={
+                  <SubsidySchemesPage
+                    onOpenCallVet={() => setIsCallVetOpen(true)}
+                    onOpenRegister={() => setIsRegisterOpen(true)}
+                  />
+                }
+              />
+
+              {/* PAGE 14: Daily Production & Milk / Egg / Meat Ledger */}
+              <Route
+                path="/production-ledger"
+                element={<ProductionLedgerPage />}
+              />
+
+              {/* PAGE 15: AI Animal Health & Emergency Diagnostic Guide */}
+              <Route
+                path="/symptom-diagnostic"
+                element={
+                  <SymptomDiagnosticPage
+                    onOpenCallVet={() => setIsCallVetOpen(true)}
+                    onSOSDispatched={handleSOSDispatched}
                   />
                 }
               />

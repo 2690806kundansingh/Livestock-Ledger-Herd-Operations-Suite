@@ -16,6 +16,8 @@ import {
   Apple,
   PlusCircle,
   Sparkles,
+  FileText,
+  HeartPulse,
 } from 'lucide-react';
 import { SpeciesType } from '../types/farm2Acre';
 
@@ -242,6 +244,30 @@ export const HomePage: React.FC<HomePageProps> = ({
           >
             <Layers className="h-3.5 w-3.5 text-emerald-400" />
             <span>Shed & Mats</span>
+          </button>
+          <button
+            onClick={() => navigate('/subsidy-schemes')}
+            className="px-3 py-1.5 rounded-lg text-emerald-300 bg-emerald-950/60 border border-emerald-800/60 hover:bg-emerald-900/80 transition whitespace-nowrap flex items-center gap-1 font-bold text-xs"
+            title="NABARD & NLM 50% Subsidies & Bankable DPR Generator"
+          >
+            <FileText className="h-3.5 w-3.5 text-emerald-400" />
+            <span>Govt Subsidies</span>
+          </button>
+          <button
+            onClick={() => navigate('/production-ledger')}
+            className="px-3 py-1.5 rounded-lg text-cyan-300 bg-cyan-950/60 border border-cyan-800/60 hover:bg-cyan-900/80 transition whitespace-nowrap flex items-center gap-1 font-bold text-xs"
+            title="Daily Milk Fat/SNF Billing & Harvest Ledger"
+          >
+            <TrendingUp className="h-3.5 w-3.5 text-cyan-400" />
+            <span>Milk Ledger</span>
+          </button>
+          <button
+            onClick={() => navigate('/symptom-diagnostic')}
+            className="px-3 py-1.5 rounded-lg text-rose-300 bg-rose-950/60 border border-rose-800/60 hover:bg-rose-900/80 transition whitespace-nowrap flex items-center gap-1 font-bold text-xs"
+            title="AI Animal Health Diagnostic & First-Aid Triage"
+          >
+            <HeartPulse className="h-3.5 w-3.5 text-rose-400" />
+            <span>AI Health Triage</span>
           </button>
           <button
             onClick={onOpenCallVet}

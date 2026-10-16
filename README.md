@@ -1,6 +1,6 @@
 # Livestock Ledger & Herd Operations Suite
 
-> Distributed enterprise farm management and parametric financial modeling platform inspired by Farmbrite and CattleMax.
+> Enterprise 2-Acre Domestic Livestock Management, Parametric Financial Modeling, Government Subsidies & Bankable DPR Generator, AI Health Triage, and Commercial Production Ledger.
 
 [![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://openjdk.org/projects/jdk/21/)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.3.4-brightgreen.svg)](https://spring.io/projects/spring-boot)
@@ -14,7 +14,9 @@
 
 ## 🌾 Overview & System Architecture
 
-The **Livestock Ledger & Herd Operations Suite** is an autonomous distributed microservices platform engineered for enterprise feedlots, ranches, and livestock operations. The system coordinates real-time animal telemetry, feed runway forecasting, multi-variable financial simulations, and automated emergency alert dispatching across high-throughput Kafka pipelines and reactive WebSockets.
+The **Livestock Ledger & Herd Operations Suite** is a full-featured agricultural operating platform engineered for 2-acre diversified domestic livestock holdings (Dairy Cattle, Elevated Goats, Freshwater Fish Ponds, Free-Range Country Poultry, and Yorkshire Swine). 
+
+The platform combines distributed microservices, real-time STOMP WebSockets, and Kafka event buses with an intuitive, multi-page frontend offering rural text-to-speech audio guidance, 50% government subsidy DPR generators, daily milk Fat/SNF billing ledgers, and emergency veterinary first-aid triage.
 
 ```
                                   [ Browser / Client ]
@@ -41,6 +43,141 @@ The **Livestock Ledger & Herd Operations Suite** is an autonomous distributed mi
                         │      (localhost:9092)       │
                         └─────────────────────────────┘
 ```
+
+---
+
+## 🕒 Chronological Feature Evolution (Time-to-Time Progress Log)
+
+This project has continuously evolved to meet the real-world operational and economic needs of modern livestock farmers:
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                   PROJECT PROGRESS TIMELINE                                      │
+├─────────────────┬──────────────────────────────────────────┬─────────────────────────────────────┤
+│ Milestone       │ Features Added                           │ Purpose / Value                     │
+├─────────────────┼──────────────────────────────────────────┼─────────────────────────────────────┤
+│ Phase 1         │ Spring Cloud Microservices + Kafka +     │ High-throughput telemetry, real-    │
+│                 │ PostgreSQL + P&L Waterfall Simulator     │ time headcount sync & alerts.       │
+├─────────────────┼──────────────────────────────────────────┼─────────────────────────────────────┤
+│ Phase 2         │ 2-Acre Domestic Livestock Hub + Leaflet  │ 5 Species (Cow, Goat, Fish, Hen,    │
+│                 │ Spatial Master Map + RFID Ledger         │ Pig) with calibrated zones A to E.  │
+├─────────────────┼──────────────────────────────────────────┼─────────────────────────────────────┤
+│ Phase 3         │ UI Decluttering + Multi-Page Navigation  │ Clean separate pages, mobile        │
+│                 │ + Home Farm Tour + Marquee Running Strip │ drawer, and audio narration.        │
+├─────────────────┼──────────────────────────────────────────┼─────────────────────────────────────┤
+│ Phase 4         │ Start Your Own Farm Incubation Service   │ 6-Step roadmap, 30-day onboarding   │
+│                 │ (`/start-farming`)                       │ checklist & initial CapEx tool.     │
+├─────────────────┼──────────────────────────────────────────┼─────────────────────────────────────┤
+│ Phase 5         │ Shed Engineering & Flooring Mat Guide    │ Natural convection sheds, 24mm cow  │
+│                 │ (`/shed-engineering`)                    │ mats vs slatted floors analysis.    │
+├─────────────────┼──────────────────────────────────────────┼─────────────────────────────────────┤
+│ Phase 6         │ Multi-Image Operational & Housing Tours  │ 6 High-res photo stages per animal: │
+│                 │ (Ponds, Aerators, Mats, Husbandry)       │ ponds, dykes, aerators, zoom modal. │
+├─────────────────┼──────────────────────────────────────────┼─────────────────────────────────────┤
+│ Phase 7         │ Government Subsidies & Bankable DPR      │ NABARD, NLM, PMMSY 50% grants with  │
+│                 │ Generator (`/subsidy-schemes`)           │ 1-click printable bank dossiers.    │
+├─────────────────┼──────────────────────────────────────────┼─────────────────────────────────────┤
+│ Phase 8         │ Daily Production & Milk / Egg / Meat     │ Morning/Evening milk, Fat-SNF auto- │
+│                 │ Billing Ledger (`/production-ledger`)    │ billing rate formula & egg crates.  │
+├─────────────────┼──────────────────────────────────────────┼─────────────────────────────────────┤
+│ Phase 9         │ AI Symptom Diagnostic & Emergency First- │ 🔴 Critical / 🟡 Moderate triage    │
+│                 │ Aid Triage Guide (`/symptom-diagnostic`) │ with golden-hour first-aid & SOS.   │
+└─────────────────┴──────────────────────────────────────────┴─────────────────────────────────────┘
+```
+
+---
+
+## 📖 Step-by-Step Instructions for Using Each Service
+
+### 1. 🏛️ Government Subsidies & Bankable DPR Generator (`/subsidy-schemes`)
+- **How to Use:**
+  1. Navigate to **Govt Subsidies & DPR** from the sidebar or home page.
+  2. Explore central and state schemes:
+     - **NABARD DEDS**: 25%–33.3% subsidy for dairy cow units, milking machines, and chilling tanks.
+     - **NLM Goat & Sheep Scheme**: 50% capital subsidy (up to ₹50 Lakhs) for 100+5 or 500+25 breeding units.
+     - **PMMSY Freshwater Fisheries**: 40%–60% subsidy for earthen pond excavation, solar aerators, and feed inputs.
+     - **NLM Piggery Scheme**: 50% capital subsidy for breeding pens, slatted floors, and biogas flush lines.
+     - **AHIDF**: 3% interest subvention for silage baling and milk chilling infrastructure.
+  3. Switch to **📑 2. Bankable DPR Generator**:
+     - Select your species (e.g. 10 Dairy Cows, 50+3 Goats, 0.5 Acre Fish Pond).
+     - Inspect the turnkey CapEx schedule, government subsidy grant, farmer equity margin, and bank term loan requirement.
+     - Review the 5-year operating cash-flow forecast and Debt Service Coverage Ratio (DSCR).
+     - Tap **"Print / Save as PDF"** to generate an official document formatted for your bank branch manager.
+  4. Use the **Document Checklist** tab to verify land title (7/12 extract), Aadhaar, water test reports, and CIBIL eligibility (>650).
+
+---
+
+### 2. 🥛 Daily Production & Milk / Egg / Meat Ledger (`/production-ledger`)
+- **How to Use:**
+  1. Navigate to **Production & Milk Billing** (`/production-ledger`).
+  2. Tap **"Record Morning / Evening Milk Collection"**:
+     - Choose session (*Morning* or *Evening*).
+     - Select animal species (*Cow* or *Goat*).
+     - Enter volume in Liters, Fat %, and SNF %.
+     - The system automatically calculates the price per liter and total collection payout using standard cooperative dairy pricing:
+       $$\text{Rate (₹/L)} = (\text{Fat} \times 6.8) + (\text{SNF} \times 4.2)$$
+     - Save the entry to immediately update daily totals and averages.
+  3. Switch to **🥚 Poultry Egg Crates** to track daily good eggs, cracked eggs, 30-egg crate counts, and revenue.
+  4. Switch to **🐟 Fish Net Sampling** to log sample counts, average fingerling weight in grams, Feed Conversion Ratio (FCR), and estimated pond biomass.
+  5. Tap **"Print Daily Settlement Slips"** for milk buyers or accounting records.
+
+---
+
+### 3. 🩺 AI Animal Health Diagnostic & Emergency First-Aid Triage (`/symptom-diagnostic`)
+- **How to Use:**
+  1. Navigate to **AI Health & Triage Guide** (`/symptom-diagnostic`).
+  2. Select your domestic animal (Cattle Cow, Goat, Fish Pond, Country Poultry, Yorkshire Pig).
+  3. Filter by triage severity or type symptoms in the search bar (e.g. *"bloat"*, *"swollen udder"*, *"gasping"*, *"limping"*).
+  4. Tap on any condition to expand its emergency dossier:
+     - **Recognized Clinical Symptoms**: Bulleted signs to confirm diagnosis.
+     - **Golden-Hour Immediate First-Aid**: Step-by-step actions to execute in the first 30 minutes before the doctor arrives (e.g., drenching mustard oil + hing for acute bloat; sodium percarbonate for pond oxygen deficit; Virkon-S for poultry).
+     - **⚠️ Critical Warnings (What NOT to do)**: Essential precautions to prevent fatal errors.
+     - **Licensed Veterinary Protocol**: Clinical injections and prescriptions required from a doctor.
+  5. Tap **"🔊 Listen"** to hear voice instructions in clear Hindi/English.
+  6. Tap **"SOS Dispatch"** to transmit the animal's ear tag, pen location, and symptom notes directly to the on-call veterinary mobile unit.
+
+---
+
+### 4. 📸 Multi-Image Pond & Shed Operational Galleries
+- **Available on:**
+  - [FarmStarterPage.tsx](file:///frontend/src/pages/FarmStarterPage.tsx) (in the Species Incubation Deep-Dive)
+  - [ShedEngineeringPage.tsx](file:///frontend/src/pages/ShedEngineeringPage.tsx) (in the `📸 Multi-Image Photo Guide` tab)
+  - [SpeciesManagementModule.tsx](file:///frontend/src/components/farm2acre/SpeciesManagementModule.tsx) (in the `📸 5. मल्टी-फोटो गाइड` tab)
+- **Features:**
+  - 6 photographic operational stages per animal:
+    - **Fish**: Earthen pond excavation, paddlewheel aerators, fingerling acclimatization, plankton Secchi testing, extruded pellet feeding, and drag net harvesting.
+    - **Cow**: Open-ridge barn, vulcanized rubber mats, mangers, herringbone milking parlor, exercise paddock, and silage bunker.
+    - **Goat**: Elevated stilt machan, slatted timber floors, suspended loppings racks, kid nursery, and manure conveyors.
+    - **Poultry**: Free-range run, deep-litter rice husk coop, 4-tier dark nest boxes, chick brooder lamps, and bell drinkers.
+    - **Pig**: Sloped self-cleaning concrete pens, cooling wallows, farrowing crates with anti-crush rails, bite nipples, and biogas flush.
+  - Click any thumbnail in the 6-image strip to jump to that operational step.
+  - Tap **Zoom In** for full-screen inspection of engineering angles and construction materials.
+  - Listen to step-by-step SOPs with integrated audio voice assistance.
+
+---
+
+### 5. 🚀 Start Your Own Farm Incubation Service (`/start-farming`)
+- **How to Use:**
+  1. Access the universal **6-Step Incubation Roadmap**:
+     - Land Zoning & Environmental Orientation
+     - Shed Construction & Biosecure Paddock
+     - Procurement of Certified Pedigree Stock
+     - Year-Round Green Fodder & Silage Bank
+     - Cold-Chain Storage & Milk/Meat Aggregation
+     - Bank Subsidies & Livestock Insurance
+  2. Switch between the 5 domestic species to inspect covered space per animal, open run yard requirements, recommended starter breeds, and estimated monthly net profits.
+  3. Track your stock arrival using the **First 30 Days Interactive Checklist**.
+  4. Use the **Financial Feasibility Simulator** to calculate gross capital, eligible subsidy, and net farmer outlay based on custom headcount.
+
+---
+
+### 6. 🏛️ Shed Engineering & Flooring Mat Architecture (`/shed-engineering`)
+- **How to Use:**
+  1. Inspect **🏛️ Shed Structure**: Orientation rules (East-West axis), ridge monitor ventilation heights, roof overhang pitch, and Bill of Materials (BOM).
+  2. Inspect **🛡️ Mats & Flooring**:
+     - Scientifically proven flooring: 24mm interlocking vulcanized rubber cow mats, 1.5m elevated slatted composite timber for goats, HDPE pond liners, and cast-iron piglet creep slats.
+     - Clinical benefits: 40% reduction in lameness, prevention of subclinical mastitis, and elimination of parasitic soil worms.
+  3. Use the **📐 Cost Estimator** to compute covered square footage, roofing sheet count, and total mats needed.
 
 ---
 
@@ -82,17 +219,29 @@ The **Livestock Ledger & Herd Operations Suite** is an autonomous distributed mi
   - Listens to `inventory.events`: Dispatches feed restock alert emails to the procurement officer.
 - **Scheduled Job**:
   - `@Scheduled(cron = "0 0 8 * * MON")` to compile and send weekly executive digests to farm managers.
-- **Templates**: High-contrast, responsive HTML emails (`mortality-alert.html`, `inventory-alert.html`, `weekly-digest.html`).
 
 ---
 
 ## 🎨 Modern React 19 Frontend (`/frontend`)
 
-- **STOMP over SockJS (`src/services/websocket.ts`)**: Auto-reconnecting real-time subscriber to `/topic/headcount`.
-- **Census Ribbon (`src/components/CensusRibbon.tsx`)**: Live headcount status cards with dynamic delta animations.
-- **P&L Simulator (`src/components/PnlForecastSimulator.tsx`)**: Parametric range sliders and synchronized Recharts waterfall visualizations.
-- **Activity Log Modal (`src/components/ActivityLogModal.tsx`)**: Interactive logging for Birth, Mortality, Treatment, Transfer, and Sale events.
-- **Feed Inventory Widget (`src/components/FeedInventoryWidget.tsx`)**: Visual runway monitors and delivery logging.
+- **Full Client-Side Routing (`src/App.tsx`)**:
+  - `/` — Integrated Home Farm Tour with Marquee Running Strip & Footer
+  - `/dashboard` — Live Headcount Telemetry & Sensor Dashboard
+  - `/start-farming` — Step-by-Step New Farm Setup Incubation Service
+  - `/shed-engineering` — Shed Architecture & Flooring Mat Guidance
+  - `/subsidy-schemes` — NABARD & NLM Subsidies & Bankable DPR Generator
+  - `/production-ledger` — Daily Milk Fat/SNF Billing & Harvest Ledger
+  - `/symptom-diagnostic` — AI Animal Health Diagnostic & First-Aid Triage Guide
+  - `/animals` — Species Management Hub (Cow, Goat, Fish, Hen, Pig)
+  - `/farm-map` — 2-Acre Master Zone Spatial Layout
+  - `/registry` — RFID Master Animal Database & Life Events
+  - `/feed-inventory` — Feed Stock Runway & Delivery Logging
+  - `/financials` — Waterfall P&L Simulator
+  - `/marketplace` — Certified Ear-Tagged Livestock Trading
+  - `/veterinary` — Doctor Directory & 24/7 Helpline
+  - `/bio-economy` — Zero-Waste Biogas & Bio-Slurry Circular Loop
+  - `/nearby-farms` — Leaflet Local Farm Discovery Map
+- **Speech Audio Engine (`src/utils/speechVoice.ts`)**: Rural Web Speech API text-to-speech for all operational guides.
 
 ---
 
@@ -107,22 +256,22 @@ CREATE DATABASE forecast_db;
 CREATE DATABASE notification_db;
 ```
 
-### 2. Run Backend Services (in IntelliJ IDEA or Terminal)
-Run each microservice using IntelliJ IDEA (see [INTELLIJ_SETUP.md](file:///c:/Users/chand/Desktop/Livestock%20Ledger%20and%20Herd%20Operation%20Suit/INTELLIJ_SETUP.md)):
+### 2. Run Backend Microservices
+Run each microservice using IntelliJ IDEA or Terminal:
 ```bash
-# Gateway
+# 1. Gateway
 cd api-gateway && mvn spring-boot:run
 
-# Livestock Service
+# 2. Livestock Service
 cd livestock-ledger-service && mvn spring-boot:run
 
-# Inventory Service
+# 3. Inventory Service
 cd feed-inventory-service && mvn spring-boot:run
 
-# Forecasting Service
+# 4. Forecasting Service
 cd forecasting-pnl-service && mvn spring-boot:run
 
-# Notification Service
+# 5. Notification Service
 cd notification-mail-service && mvn spring-boot:run
 ```
 
@@ -134,8 +283,14 @@ npm run dev
 ```
 Open **`http://localhost:5173`** in your browser.
 
+To verify production build:
+```bash
+cd frontend
+npm run build
+```
+
 ---
 
 ## 🛠️ GitHub Repository Integration
-This codebase is maintained and synced with:
-[https://github.com/2690806kundansingh/Livestock-Ledger-Herd-Operations-Suite.git](https://github.com/2690806kundansingh/Livestock-Ledger-Herd-Operations-Suite.git)
+This codebase is maintained and pushed to:
+[https://github.com/2690806kundansingh/Livestock-Ledger-Herd-Operations-Suite.git](https://github.com/2690806kundansingh/Livestock-Ledger-Herd-Operations-Suite.git) on branch `main`.
